@@ -1,0 +1,17 @@
+body {
+
+    font-family: sans-serif;
+
+    color:#1d1e22;
+
+}
+
+table, th, td  {
+
+    border: 1px solid black;
+
+}
+
+#cheese {
+    border: 1px black;
+ }
