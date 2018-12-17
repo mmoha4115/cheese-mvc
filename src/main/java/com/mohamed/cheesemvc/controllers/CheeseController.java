@@ -32,7 +32,7 @@ public class CheeseController {
 
     @RequestMapping(value = "add" , method = RequestMethod.POST)
     public String processAddCheeseForm(Model model,@RequestParam String cheeseName, @RequestParam String description){
-        if(cheeseName.isEmpty()){
+        if(cheeseName.isEmpty() || containsNumbers(cheeseName)){
             String error = "Cheese name must contain alphabets only and must not be empty!";
             return displayAddCheeeseForm(model, error);
         }
@@ -42,9 +42,19 @@ public class CheeseController {
     }
 
     public boolean containsNumbers(String cheeseName){
+        char [] numbers = "0123456789".toCharArray();
+        char [] letterOfCheeseName = cheeseName.toCharArray();
 
+        for(char cheeseNameChar:letterOfCheeseName){
+            for (char numberChar: numbers){
+                if(cheeseNameChar == numberChar){
+                    return true;
+                }
+            }
+        }
         return false;
     }
+
     @RequestMapping(value = "remove",method = RequestMethod.GET)
     public String removeCheeseForm(Model model){
         model.addAttribute("cheeses",cheeses);
