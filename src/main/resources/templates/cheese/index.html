@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
     <head th:replace="fragments :: head"></head>
-    <body>
+    <body class="container">
 
-        <h1 th:text="${title}">Default Title </h1>
+        <h1 class="text-center" th:text="${title}">Default Title </h1>
         <nav th:replace="fragments :: navigation"></nav>
         <p th:unless="${cheeses} and ${cheeses.size()}">no cheese :(</p>
 
-        <div class="container">
+        <div class=" cheese">
             <table class="table table-bordered">
                 <tr>
                     <th>Cheese Name</th>
