@@ -14,8 +14,8 @@
                     <th>Description</th>
                 </tr>
                 <tr th:each="cheese : ${cheeses}" >
-                    <td th:text="${cheese.key}"> A cheese name</td>
-                    <td th:text="${cheese.value}"> A cheese description</td>
+                    <td th:text="${cheese}"> A cheese name</td>
+                    <td th:text="${cheese}"> A cheese description</td>
                 </tr>
             </table>
         </div>
@@ -25,9 +25,11 @@
                 <select  name="cheese">
 
                     <tr th:each="cheese : ${cheeses}" >
-                        <td >
-                            <option th:text="${cheese.key}" th:value="${cheese.key}">Volvo</option>
-                        </td>
+                        <tr th:each="acheese : ${cheese}">
+                            <td >
+                                <option th:text="${cheese.getName()}" th:value="${cheese.getDescription()}">Volvo</option>
+                            </td>
+                        </tr>
                     </tr>
                 </select>
                 <input type="submit" value="Remove Cheese">
