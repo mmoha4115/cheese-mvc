@@ -2,14 +2,13 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments :: head">
 </head>
-<body >
-<h1 th:text="${title}">Default Title </h1>
-<h1 th:text="${title}"> Default Title</h1>
+<body class="container">
+<h1 class="text-center" th:text="${title}">Default Title </h1>
 <nav th:replace="fragments :: navigation"></nav>
 <div class="container">
 <form method="post">
     <div >
-        <p th:text="${error}"></p>
+        <p class="error" th:text="${error}"></p>
         <label >Cheese Name:</label>
         <input type="text" class="form-control" name="cheeseName" />
     </div>

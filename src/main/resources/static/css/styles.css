@@ -12,6 +12,10 @@ table, th, td  {
 
 }
 
-#cheese {
-    border: 1px black;
+.cheese {
+    border: 1px solid black;
+ }
+
+ .error {
+    color:red;
  }
