@@ -14,19 +14,19 @@
                     <th>Description</th>
                 </tr>
                 <tr th:each="cheese : ${cheeses}" >
-                    <td th:text="${cheese.key}"> A cheese name</td>
-                    <td th:text="${cheese.value}"> A cheese description</td>
+                    <td th:text="${cheese.name}"> A cheese name</td>
+                    <td th:text="${cheese.description}"> A cheese description</td>
                 </tr>
             </table>
         </div>
 
         <div class="container">
             <form method="post" action="/cheese/remove">
-                <select  name="cheese">
+                <select  name="cheeseId">
 
                     <tr th:each="cheese : ${cheeses}" >
                         <td >
-                            <option th:text="${cheese.key}" th:value="${cheese.key}">Volvo</option>
+                            <option th:text="${cheese.getName()}" th:value="${cheese.cheeseId}">A Cheese Name</option>
                         </td>
                     </tr>
                 </select>
