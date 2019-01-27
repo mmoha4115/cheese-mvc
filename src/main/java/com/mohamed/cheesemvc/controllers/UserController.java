@@ -21,12 +21,16 @@ public class UserController {
 
     @RequestMapping(value = "add")
     public String processAddUserForm(Model model, @ModelAttribute User user, String verify){
-        if(user.getPassword() == verify){
+        if(user.getPassword().equals(verify)){
             UserData.add(user);
         }else {
+            model.addAttribute("username",user.getUsername());
+            model.addAttribute("email",user.getEmail());
+            model.addAttribute("error","Password does not match verify");
             return addUserForm(model);
         }
-        return "redirect:";
+        model.addAttribute("user",user);
+        return "user/index";
     }
 
 }

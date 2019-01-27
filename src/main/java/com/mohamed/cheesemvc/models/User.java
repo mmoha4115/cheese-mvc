@@ -1,15 +1,15 @@
 package com.mohamed.cheesemvc.models;
 
 public class User {
-    private static int nextId=1;
-    private int id;
+    private static int nextUserId=1;
+    private int userId;
     private String username;
     private String email;
     private String password;
 
     public User(){
-        this.id = nextId;
-        nextId++;
+        this.userId = nextUserId;
+        nextUserId++;
     }
 
     public User(String username,String email,String password){
@@ -19,12 +19,12 @@ public class User {
         this.password=password;
     }
 
-    public int getId() {
-        return id;
+    public int getUserId() {
+        return userId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
     public String getUsername() {

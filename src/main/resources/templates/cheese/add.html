@@ -6,15 +6,17 @@
 <h1 class="text-center" th:text="${title}">Default Title </h1>
 <nav th:replace="fragments :: navigation"></nav>
 <div class="container">
-<form method="post">
+<form method="post" th:object="${cheese}">
     <div class="form-group">
         <p class="error" th:text="${error}"></p>
-        <label for="name-field">Cheese Name</label><br/>
-        <input type="text" class="form-control"  id="name-field" name="name" />
+        <label th:for="name">Cheese Name</label><br/>
+        <input class="form-control" th:field="*{name}" />
+        <span th:errors="*{name}"></span>
     </div>
     <div class="form-group">
-        <label for="desc-field">Description</label><br/>
-        <input type="text" class="form-control" id="desc-field" name="description" />
+        <label th:for="description">Description</label><br/>
+        <input class="form-control" th:field="*{description}" />
+        <span th:errors="*{description}"></span>
     </div>
     <button type="submit" class="btn btn-default">Add Cheese</button>
 </form>
